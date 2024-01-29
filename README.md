@@ -18,15 +18,15 @@ Para rodar esse projeto você pode usar o Visual Studio. E seguir os passos abai
 * Abra o Package Manager Console, execute o comando Update-Database
 * Após o término da execução do comando, rode o projeto.
 
-### Banco de Dados
+## Banco de Dados
 
 Esse projeto está usando SQL Server, você pode utilizar uma instância que tem instalado na sua máquina.
 
-### Durable Function
+## Durable Function
 
 A Durable Function foi criada com base no pattern Function Chaining. E foi desenvolvida para receber um JSON via post.
 
-# JSON:
+## JSON:
 
 JSON para solicitação via post:
 ````````````
@@ -37,11 +37,11 @@ JSON para solicitação via post:
     "NomeCliente": "FIAP"
 }
 ``````````````
-### Projeto
+## Projeto
 
 O projeto foi construído com a linguagem C#, .NET 7.0.
 
-### Observções
+## Observções
 
 Ao executar o projeto o banco de dados será populado com os registros:
 
