@@ -49,8 +49,8 @@ Produto:
 
 | Codigo   |      Nome      |
 |----------|:-------------:|
-| P001 |  Camisa | 
-| P002 | Calça   |   
+| P001 | Camisa | 
+| P002 | Calça |   
 | P003 | Meia |    
 | P004 | Luva |  
 
@@ -62,6 +62,13 @@ Estoque
  CodigoProduto = "P002", Quantidade = 10;
  CodigoProduto = "P003", Quantidade = 10;
  CodigoProduto = "P004", Quantidade = 10;
+
+ | Codigo   |      Quantidade      |
+|----------|:-------------:|
+| P001 | 10 | 
+| P002 | 10 |   
+| P003 | 10 |    
+| P004 | 10 |  
 
 
 ## Grupo 33
