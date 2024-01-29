@@ -16,7 +16,7 @@ Para rodar esse projeto você pode usar o Visual Studio. E seguir os passos abai
 
 * Abra o projeto no Visual Studio.
 * Abra o Package Manager Console, execute o comando Update-Database
-* Após o término da execução do comando, rode o projeto.
+* Somente após o término da execução do comando, rode o projeto.
 
 ## Banco de Dados
 
