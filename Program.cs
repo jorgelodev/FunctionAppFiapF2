@@ -6,6 +6,7 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
@@ -22,15 +23,17 @@ var host = new HostBuilder()
             options.AllowSynchronousIO = true;
         });
 
-        //string connectionString = hostContext.Configuration.GetSection("ConnectionString").Value!;
-
         string connectionString = "Data Source=localhost;Initial Catalog=FunctionApp;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
 
-        services.AddDbContext<ApplicationDbContext>(
-            options => SqlServerDbContextOptionsExtensions.UseSqlServer(options, connectionString));
 
-        services.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+        services.AddDbContext<ApplicationDbContext>(options =>
+        {
+            options.UseSqlServer(connectionString);
+            options.EnableSensitiveDataLogging(false); 
+            options.UseLoggerFactory(LoggerFactory.Create(builder => builder.AddFilter(DbLoggerCategory.Database.Command.Name, LogLevel.None)));
+        });
+
+
     })
     .Build();
 
@@ -42,7 +45,6 @@ using (var scope = host.Services.CreateScope())
     {
         var dbContext = services.GetRequiredService<ApplicationDbContext>();
 
-        // Execute a rotina de verificação e cadastro
         CadastraProdutosEEstoque(dbContext);
     }
     catch (Exception ex)
@@ -55,6 +57,10 @@ static void CadastraProdutosEEstoque(ApplicationDbContext dbContext)
 {
     if (!dbContext.Produtos.Any())
     {
+        Console.WriteLine("Iniciando cadastro dos registros");
+
+
+
         var produto1 = new Produto { Codigo = "P001", Nome = "Camisa" };
         var produto2 = new Produto { Codigo = "P002", Nome = "Calça" };
         var produto3 = new Produto { Codigo = "P003", Nome = "Meia" };
@@ -78,7 +84,21 @@ static void CadastraProdutosEEstoque(ApplicationDbContext dbContext)
 
         dbContext.SaveChanges();
 
-        Console.WriteLine("Produtos cadastrados com sucesso!");
+        Console.WriteLine("Produtos: ");
+        Console.WriteLine("");
+        foreach (var produto in dbContext.Produtos)
+        {   
+            Console.WriteLine($"Codigo: {produto.Codigo}\t Nome: {produto.Nome}");
+        }
+
+        Console.WriteLine("Estoque: ");
+        Console.WriteLine("");
+        foreach (var estoque in dbContext.Estoque)
+        {
+            Console.WriteLine($"Codigo Produto: {estoque.CodigoProduto}\t Quantidade: {estoque.Quantidade}");
+        }
+
+        Console.WriteLine("Produtos e Estoque cadastrados com sucesso!");
     }
 }
 #endregion
