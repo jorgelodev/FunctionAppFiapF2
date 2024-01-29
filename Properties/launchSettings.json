@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FunctionAppFiapF2": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7040",
+      "launchBrowser": false
+    }
+  }
+}
