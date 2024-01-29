@@ -2,7 +2,7 @@
 
 FunctionAppFiapF2 é um projeto desenvolvido como proposta para entrega do Tech Challenge Fase 2.
 
-##Enunciado do Tech Challenge
+## Enunciado do Tech Challenge
 
 Deve desenvolver uma Function utilizando o template durable. Ela deve simular o processo de aprovação de um pedido. O formato está livre, mas vocês devem criar no formato durable para colocar este modelo em prática. 
 
