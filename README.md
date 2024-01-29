@@ -45,18 +45,16 @@ O projeto foi construído com a linguagem C#, AspNet 7.0.
 
 Ao executar o projeto o bando de dados será populado com os registros:
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+Produto:
 
-Produto
+| Codigo   |      Nome      |
+|----------|:-------------:|
+| P001 |  Camisa | 
+| P002 | Calça   |   
+| P003 | Meia |    
+| P004 | Luva |  
 
-  Codigo = "P001", Nome = "Camisa";
-  Codigo = "P002", Nome = "Calça";
-  Codigo = "P003", Nome = "Meia";
-  Codigo = "P004", Nome = "Luva";
+
 
 Estoque
 
