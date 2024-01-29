@@ -39,7 +39,7 @@ JSON para solicitação via post:
 ``````````````
 ### Projeto
 
-O projeto foi construído com a linguagem C#, AspNet 7.0.
+O projeto foi construído com a linguagem C#, .NET 7.0.
 
 ### Observções
 
