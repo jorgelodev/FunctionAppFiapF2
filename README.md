@@ -54,14 +54,7 @@ Produto:
 | P003 | Meia |    
 | P004 | Luva |  
 
-
-
-Estoque
-
- CodigoProduto = "P001", Quantidade = 10;
- CodigoProduto = "P002", Quantidade = 10;
- CodigoProduto = "P003", Quantidade = 10;
- CodigoProduto = "P004", Quantidade = 10;
+Estoque:
 
  | Codigo   |      Quantidade      |
 |----------|:-------------:|
