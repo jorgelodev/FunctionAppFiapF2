@@ -26,16 +26,17 @@ Esse projeto está usando SQL Server, você pode utilizar uma instância que tem
 
 A Durable Function foi criada com base no pattern Function Chaining. E foi desenvolvida para receber um JSON via post.
 
-JSON:
+# JSON:
 
 JSON para solicitação via post:
+````````````
 {
     "CodigoProduto": "P002",
     "NumeroCartaoCredito": "1234567890123456",
     "Quantidade": "8",
     "NomeCliente": "FIAP"
 }
-
+``````````````
 ### Projeto
 
 O projeto foi construído com a linguagem C#, AspNet 7.0.
