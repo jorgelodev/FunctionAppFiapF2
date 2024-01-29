@@ -43,7 +43,7 @@ O projeto foi construído com a linguagem C#, AspNet 7.0.
 
 ### Observções
 
-Ao executar o projeto o bando de dados será populado com os registros:
+Ao executar o projeto o banco de dados será populado com os registros:
 
 Produto:
 
